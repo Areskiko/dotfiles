@@ -66,6 +66,7 @@ primary_widgets = [
     *workspaces(),
 
     separator(),
+    
 
     powerline('color4', 'dark'),
 
@@ -114,6 +115,12 @@ primary_widgets = [
     powerline('dark', 'color1'),
 
     widget.Systray(background=colors['dark'], padding=5),
+    
+    widget.LaunchBar(progs = [
+        ('  ', 'betterlockscreen -l', 'Lock screen'),
+        (' 鈴 ', 'systemctl hibernate', 'Goes to sleep'),
+        ("   ", 'systemctl poweroff', "Shuts down")
+    ], **base(bg='dark')),
     
     #widget.Notify(**base(bg='dark'))
 ]

@@ -77,16 +77,16 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Volume
     ([], "XF86AudioLowerVolume", lazy.spawn(
-        "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+        "amixer set Master 5%-"
     )),
     ([], "XF86AudioRaiseVolume", lazy.spawn(
-        "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+        "amixer set Master 5%+"
     )),
     ([], "XF86AudioMute", lazy.spawn(
-        "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        "amixer set Master toggle"
     )),
 
     # Brightness
-    ([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
-    ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+    ([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 10")),
+    ([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 10")),
 ]]

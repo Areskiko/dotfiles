@@ -1,0 +1,9 @@
+configuration {
+     modi: "drun,window,ssh";   
+     terminal: "alacritty";
+     //,combi";
+     font: "hack 10";
+     //combi-modi: "window,drun,ssh";
+}
+@theme "spotlight-dark"
+//@theme "/usr/share/rofi/themes/solarized.rasi"

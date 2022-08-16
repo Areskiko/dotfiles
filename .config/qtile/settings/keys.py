@@ -89,4 +89,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Brightness
     ([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 10")),
     ([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 10")),
+    
+    # Other
+    ([], "Print", lazy.spawn("flameshot gui"))
 ]]

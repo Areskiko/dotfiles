@@ -1,9 +1,12 @@
-theme = "onedark"
+theme = "gruvbox"
 
 [editor]
 line-number = "relative"
 idle-timeout = 0
 completion-trigger-len = 1
+
+[editor.lsp]
+display-messages = true
 
 [editor.cursor-shape]
 insert = "bar"

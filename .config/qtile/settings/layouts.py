@@ -38,7 +38,7 @@ floating_layout = layout.Floating(
         Match(wm_class='ssh-askpass'),
         Match(title='branchdialog'),
         Match(title='pinentry'),
-        Match(title='spyglass'),
+        #Match(title='spyglass'),
     ],
     border_focus=colors["color4"][0]
 )

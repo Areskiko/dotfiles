@@ -33,6 +33,9 @@ require('packer').startup(function(use)
 	use 'hrsh7th/cmp-vsnip'
 	use 'hrsh7th/vim-vsnip'
 
+	-- Navigation
+	use 'ggandor/leap.nvim'
+
 end)
 
 -- Settings
@@ -45,6 +48,15 @@ vim.wo.number = true
 -- Set leader key
 vim.g.mapleader = " "
 
+-- Yank highlight
+vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=false}]])
+
+-- Indentation
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 0
+vim.opt.shiftwidth = 0
+vim.opt.expandtab = false
+
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -55,7 +67,14 @@ vim.keymap.set('n', '<leader>fk', builtin.commands, {})
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "lua", "rust" },
+  ensure_installed = {
+	  "c",
+	  "lua",
+	  "rust",
+	  "javascript",
+	  "typescript",
+	  "svelte"
+  },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -76,8 +95,28 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+-- Local Treesitter
+require "nvim-treesitter.parsers".get_parser_configs().vsl = {
+	install_info = {
+		url = "/home/ares/Projects/tree-sitter-vsl",
+		files = { "src/parser.c" }
+	},
+	filetype = "vsl",
+}
+
+require"nvim-treesitter.parsers".filetype_to_parsername.vsl = "vsl"
+vim.cmd([[set statusline+=%{nvim_treesitter#statusline()}]])
+
 -- Tags
 vim.cmd([[set statusline+=%{gutentags#statusline()}]])
+vim.g.gutentags_ctags_tagfile = '.tags'
+vim.g.gutentags_file_list_command = 'rg --files'
+--vim.g.gutentags_file_list_command = {
+--      ['markers'] = {
+--      ['.git'] = 'rg --files',
+--       },
+--}
+vim.g.gutentags_generate_on_new = 1
 
 local cmp = require'cmp'
 
@@ -160,13 +199,16 @@ local on_attach = function(client, bufnr)
   end, bufopts)
   vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', 'å', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<leader>fd', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 local servers = { 
-	'rust_analyzer'
+	'rust_analyzer',
+	'clangd',
+	'pyright',
+	'asm_lsp'
 }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
@@ -181,3 +223,5 @@ vim.keymap.set('n', 'Ø', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', 'ø', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
+
+require('leap').add_default_mappings()

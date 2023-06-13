@@ -206,9 +206,7 @@ end
 
 local servers = { 
 	'rust_analyzer',
-	'clangd',
-	'pyright',
-	'asm_lsp'
+	'ruff_lsp',
 }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {

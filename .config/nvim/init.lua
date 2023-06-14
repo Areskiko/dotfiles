@@ -207,6 +207,7 @@ end
 local servers = { 
 	'rust_analyzer',
 	'ruff_lsp',
+	'tsserver'
 }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {

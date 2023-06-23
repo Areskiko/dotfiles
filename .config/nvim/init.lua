@@ -41,6 +41,8 @@ end)
 -- Settings
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[set timeoutlen=1000]])
+vim.cmd([[set ttimeoutlen=0]])
 
 vim.wo.relativenumber = true
 vim.wo.number = true
@@ -73,7 +75,8 @@ require'nvim-treesitter.configs'.setup {
 	  "rust",
 	  "javascript",
 	  "typescript",
-	  "svelte"
+	  "svelte",
+	  "python"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -95,16 +98,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
--- Local Treesitter
-require "nvim-treesitter.parsers".get_parser_configs().vsl = {
-	install_info = {
-		url = "/home/ares/Projects/tree-sitter-vsl",
-		files = { "src/parser.c" }
-	},
-	filetype = "vsl",
-}
-
-require"nvim-treesitter.parsers".filetype_to_parsername.vsl = "vsl"
 vim.cmd([[set statusline+=%{nvim_treesitter#statusline()}]])
 
 -- Tags
@@ -207,7 +200,8 @@ end
 local servers = { 
 	'rust_analyzer',
 	'ruff_lsp',
-	'tsserver'
+	'tsserver',
+	'pyright',
 }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {

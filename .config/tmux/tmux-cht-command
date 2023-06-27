@@ -1,0 +1,10 @@
+fd
+rg
+xargs
+cargo
+git
+docker
+tar
+ln
+sed
+awk

@@ -36,6 +36,9 @@ require('packer').startup(function(use)
 	-- Navigation
 	use 'ggandor/leap.nvim'
 
+	-- Git
+	use 'tpope/vim-fugitive'
+
 end)
 
 -- Settings
@@ -210,11 +213,13 @@ for _, lsp in pairs(servers) do
   }
 end
 
+-- Other keymaps
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', 'Ø', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', 'ø', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<leader>gb', ':G blame<Enter>',opts)
 
 
 require('leap').add_default_mappings()

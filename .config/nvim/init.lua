@@ -42,7 +42,8 @@ require('packer').startup(function(use)
 end)
 
 -- Settings
-vim.o.background = "dark" -- or "light" for light mode
+vim.o.background = "dark"
+vim.o.termguicolors = true
 vim.cmd([[colorscheme gruvbox]])
 vim.cmd([[set timeoutlen=1000]])
 vim.cmd([[set ttimeoutlen=0]])
@@ -79,7 +80,8 @@ require'nvim-treesitter.configs'.setup {
 	  "javascript",
 	  "typescript",
 	  "svelte",
-	  "python"
+	  "python",
+	  "go"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)

@@ -3,7 +3,6 @@
     font-family: "Fira Sans SemiBold";
     font-size: 12px;
     min-height: 16px;
-	color: #4db5bd;
 }
 
 window#waybar {
@@ -25,7 +24,7 @@ button.focused {
 
 #workspaces button {
     padding: 5px 15px 5px 10px;
-    color: #bbc2cf;
+    color: #27585c;
     margin: 1px 0;
 }
 
@@ -47,7 +46,7 @@ button:hover {
 }
 
 #workspaces button.visible {
-    color: #27585c;
+    color: #4db5bd;
     border-radius: 0;
     box-shadow: none;
     border-width: 0px;

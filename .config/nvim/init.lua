@@ -205,6 +205,7 @@ local servers = {
 	'ruff_lsp',
 	'tsserver',
 	'pyright',
+	'gopls',
 }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {

@@ -101,19 +101,25 @@ require'nvim-treesitter.configs'.setup {
         end
     end,
   },
+
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = '<CR>',
+	  scope_incremental = '<CR>',
+      node_incremental = '<TAB>',
+      node_decremental = '<S-TAB>',
+    },
+  },
 }
 
+vim.cmd([[set statusline+=%{FugitiveStatusline()}]])
 vim.cmd([[set statusline+=%{nvim_treesitter#statusline()}]])
 
 -- Tags
 vim.cmd([[set statusline+=%{gutentags#statusline()}]])
 vim.g.gutentags_ctags_tagfile = '.tags'
 vim.g.gutentags_file_list_command = 'rg --files'
---vim.g.gutentags_file_list_command = {
---      ['markers'] = {
---      ['.git'] = 'rg --files',
---       },
---}
 vim.g.gutentags_generate_on_new = 1
 
 local cmp = require'cmp'

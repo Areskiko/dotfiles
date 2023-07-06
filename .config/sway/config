@@ -246,5 +246,6 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86Search exec $menu
 bindsym Print exec screenshot.sh
+bindsym $mod+Print exec screenshot.sh save
 
 include /etc/sway/config.d/*

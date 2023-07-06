@@ -48,6 +48,11 @@ vim.cmd([[colorscheme gruvbox]])
 vim.cmd([[set timeoutlen=1000]])
 vim.cmd([[set ttimeoutlen=0]])
 
+-- Folding
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.wo.foldenable = false
+
 vim.wo.relativenumber = true
 vim.wo.number = true
 
@@ -79,6 +84,7 @@ require'nvim-treesitter.configs'.setup {
 	  "rust",
 	  "javascript",
 	  "typescript",
+	  "tsx",
 	  "svelte",
 	  "python",
 	  "go"
@@ -111,6 +117,10 @@ require'nvim-treesitter.configs'.setup {
       node_decremental = '<S-TAB>',
     },
   },
+
+  indent = {
+	enable = true
+  }
 }
 
 vim.cmd([[set statusline+=%{FugitiveStatusline()}]])

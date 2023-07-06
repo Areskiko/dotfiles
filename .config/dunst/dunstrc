@@ -33,7 +33,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 10x50
+    offset = 10x10
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -87,7 +87,7 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 1
 
     # Defines color of the frame around the notification window.
 	frame_color = "#4db5bd"
@@ -308,6 +308,7 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
+    frame_color = "#888888"
     background = "#262626"
     foreground = "#888888"
     timeout = 10
@@ -322,7 +323,8 @@
     #default_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#900000"
+    #background = "#900000"
+    background = "#262626"
     foreground = "#ffffff"
     frame_color = "#ff0000"
     timeout = 0

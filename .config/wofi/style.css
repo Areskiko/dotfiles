@@ -1,0 +1,51 @@
+window {
+    margin: 0px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    border: 2px solid #4db5bd;
+}
+
+#input {
+    margin: 5px;
+    border: none;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    border-radius: 30px;
+}
+
+#outer-box {
+    margin: 15px;
+    border: none;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: #4db5bd;
+	background-color: rgba(0, 0, 0, 0);
+} 
+
+#entry:selected {
+    border-radius: 20px;
+    border: 2px solid #4db5bd;
+	background-color: rgba(0, 0, 0, 0);
+    outline: none;
+}
+
+#entry:selected * {
+	background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    outline: none;
+}
+

@@ -7,4 +7,7 @@ font:
 
 colors:
   primary:
-    background: "#262626"
+    background: "#000000"
+
+window:
+  opacity: 0.9

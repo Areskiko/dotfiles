@@ -25,9 +25,10 @@ set $menu dmenu_path | wofi --dmenu | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * background ~/.config/sway/wallpaper.png fill
-default_border none
-client.focused "#000000" "#000000" "#000000" "#000000" "#000000"
+#output * background ~/.config/sway/wallpapers/#4db5bd.png fill
+output * background ~/.config/sway/wallpapers/base.png fill
+default_border pixel 1
+client.focused "#000000" "#000000" "#000000" "#00ffff" "#6EE2FF"
 
 #
 # Example configuration:

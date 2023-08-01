@@ -46,7 +46,7 @@ button:hover {
 }
 
 #workspaces button.visible {
-    color: #4db5bd;
+    color: #27585c;
     border-radius: 0;
     box-shadow: none;
     border-width: 0px;
@@ -54,7 +54,7 @@ button:hover {
 
 /* Active workspace */
 #workspaces button.focused.current_output {
-    color: #4db5bd;
+    color: #6EE2FF;
     border-radius: 0px;
 }
 
@@ -66,7 +66,7 @@ button:hover {
 
 #workspaces button.focused:hover {
     color: white;
-    background-color: #4db5bd;
+    background-color: #6EE2FF;
 }
 
 
@@ -95,7 +95,7 @@ button:hover {
 }
 
 #battery {
-    color: #4db5bd;
+    color: #6EE2FF;
 }
 
 #battery.charging {
@@ -111,35 +111,35 @@ button:hover {
 }
 
 #cpu {
-    color: #4db5bd;
+    color: #6EE2FF;
 }
 
 #pulseaudio {
-    color: #4db5bd;
+    color: #6EE2FF;
 }
 
 #network {
-    color: #4db5bd;
+    color: #6EE2FF;
 }
 
 #memory {
-    color: #4db5bd;
+    color: #6EE2FF;
 }
 
 #clock {
-    color: #4db5bd;
+    color: #6EE2FF;
 }
 
 #language {
-    color: #4db5bd;
+    color: #6EE2FF;
 }
 
 #backlight {
-    color: #4db5bd;
+    color: #6EE2FF;
 }
 
 #temperature {
-    color: #4db5bd;
+    color: #6EE2FF;
 }
 
 #temperature.critical {

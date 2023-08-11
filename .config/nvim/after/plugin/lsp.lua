@@ -1,7 +1,8 @@
 local servers = {
 	"rust_analyzer",
 	"gopls",
-	"tsserver"
+	"tsserver",
+	"ocamllsp",
 }
 
 

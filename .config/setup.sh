@@ -71,7 +71,8 @@ aur_packages=(
 # Install aur packages
 sudo aura -A --noconfirm $aur_packages
 
-
+# Create directories
+xdg-user-dirs-update
 
 # Tmux
 chmod +x ~/.config/tmux/tmux-cht.sh
@@ -89,7 +90,7 @@ ln -s ~/.config/sway/screenshot.sh /bin/screenshot
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source ~/.cargo/env
-
+rustup component add clippy rust-analyzer
 
 
 # OCaml

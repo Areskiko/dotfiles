@@ -1,3 +1,5 @@
+local icons = require("areskiko.icons")
+
 local servers = {
 	"rust_analyzer",
 	"gopls",
@@ -28,7 +30,7 @@ lsp.nvim_workspace()
 
 -- Autocomplete
 local cmp = require("cmp")
-local cmp_select = {behaviour = cmp.SelectBehavior.Select}
+local cmp_select = { behaviour = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
 	['<C-b>'] = cmp.mapping.scroll_docs(-4),
 	['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -39,8 +41,22 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 })
 
 lsp.setup_nvim_cmp({
-	mapping = cmp_mappings
-
+	mapping = cmp_mappings,
+	formatting = {
+		format = function(entry, vim_item)
+			-- Kind icons
+			vim_item.kind = string.format('%s %s', icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+			-- Source
+			vim_item.menu = ({
+				buffer = "[Buffer]",
+				nvim_lsp = "[LSP]",
+				luasnip = "[LuaSnip]",
+				nvim_lua = "[Lua]",
+				latex_symbols = "[LaTeX]",
+			})[entry.source.name]
+			return vim_item
+		end
+	},
 })
 
 lsp.set_preferences({
@@ -48,7 +64,7 @@ lsp.set_preferences({
 })
 
 lsp.on_attach(function(client, bufnr)
-	local bufopts = {buffer = bufnr, remap = false}
+	local bufopts = { buffer = bufnr, remap = false }
 
 	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)

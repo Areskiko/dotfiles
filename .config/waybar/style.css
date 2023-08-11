@@ -31,7 +31,11 @@ button.focused {
 
 button:hover,
 #workspaces button:hover {
-    background: #27585c;
+    border-radius: 0;
+    box-shadow: none;
+    border-width: 0px;
+    color: #6EE2FF;
+	background: black;
 }
 
 button {
@@ -39,14 +43,8 @@ button {
     margin: 2px 0;
 }
 
-button:hover {
-    border-radius: 0;
-    box-shadow: none;
-    border-width: 0px;
-}
-
 #workspaces button.visible {
-    color: #27585c;
+    color: #6EE2FF;
     border-radius: 0;
     box-shadow: none;
     border-width: 0px;
@@ -65,8 +63,8 @@ button:hover {
 }
 
 #workspaces button.focused:hover {
-    color: white;
-    background-color: #6EE2FF;
+    color: #6EE2FF;
+    background: black;
 }
 
 

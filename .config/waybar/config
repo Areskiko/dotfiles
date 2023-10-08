@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "custom/temp", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -31,6 +31,13 @@
         "format-icons": {
             "locked": "",
             "unlocked": ""
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
         }
     },
     "sway/mode": {
@@ -59,13 +66,18 @@
         "format": "{}% "
     },
     "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "thermal-zone": 6,
+        "hwmon-path": "/sys/class/hwmon/hwmon7/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
+	"custom/temp": {
+		"interval": 10,
+		"exec": "sensors coretemp-isa-0000 | rg '(\\d+)\\.\\d+' -or '$1' -m 1 | head -n 1",
+		"format": "{}°C "
+	},
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",

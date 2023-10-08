@@ -34,7 +34,7 @@ button:hover,
     border-radius: 0;
     box-shadow: none;
     border-width: 0px;
-    color: #6EE2FF;
+    color: #ff6700;
 	background: black;
 }
 
@@ -44,7 +44,7 @@ button {
 }
 
 #workspaces button.visible {
-    color: #6EE2FF;
+    color: #ff6700;
     border-radius: 0;
     box-shadow: none;
     border-width: 0px;
@@ -52,7 +52,7 @@ button {
 
 /* Active workspace */
 #workspaces button.focused.current_output {
-    color: #6EE2FF;
+    color: #ff6700;
     border-radius: 0px;
 }
 
@@ -63,7 +63,7 @@ button {
 }
 
 #workspaces button.focused:hover {
-    color: #6EE2FF;
+    color: #ff6700;
     background: black;
 }
 
@@ -79,6 +79,7 @@ button {
 #custom-spotify,
 #custom-storage,
 #custom-weather,
+#custom-temp,
 #idle_inhibitor,
 #language,
 #memory,
@@ -90,10 +91,11 @@ button {
 #window,
 #workspaces {
     padding: 1px 10px;
+    color: #ff6700;
 }
 
 #battery {
-    color: #6EE2FF;
+    color: #ff6700;
 }
 
 #battery.charging {
@@ -109,35 +111,35 @@ button {
 }
 
 #cpu {
-    color: #6EE2FF;
+    color: #ff6700;
 }
 
 #pulseaudio {
-    color: #6EE2FF;
+    color: #ff6700;
 }
 
 #network {
-    color: #6EE2FF;
+    color: #ff6700;
 }
 
 #memory {
-    color: #6EE2FF;
+    color: #ff6700;
 }
 
 #clock {
-    color: #6EE2FF;
+    color: #ff6700;
 }
 
 #language {
-    color: #6EE2FF;
+    color: #ff6700;
 }
 
 #backlight {
-    color: #6EE2FF;
+    color: #ff6700;
 }
 
 #temperature {
-    color: #6EE2FF;
+    color: #ff6700;
 }
 
 #temperature.critical {

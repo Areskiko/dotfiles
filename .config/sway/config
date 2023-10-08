@@ -27,9 +27,11 @@ set $menu wofi --show drun
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * background ~/.config/sway/wallpapers/#4db5bd.png fill
-output * background ~/.config/sway/wallpapers/base.png fill
+output * background ~/.config/sway/wallpapers/6ee2ff.png fill
 default_border pixel 1
-client.focused "#000000" "#000000" "#000000" "#00ffff" "#6EE2FF"
+client.unfocused "#000000" "#000000" "#000000" "#000000" "#000000"
+client.focused "#000000" "#000000" "#000000" "#ff6700" "#ff6700"
+client.focused_inactive "#000000" "#000000" "#000000" "#000000" "#000000"
 
 #
 # Example configuration:

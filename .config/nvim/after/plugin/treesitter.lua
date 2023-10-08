@@ -10,7 +10,9 @@ require 'nvim-treesitter.configs'.setup {
 		"svelte",
 		"python",
 		"go",
-		"ocaml"
+		"ocaml",
+		"latex",
+		"markdown"
 	},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)

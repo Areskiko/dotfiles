@@ -5,13 +5,15 @@ local servers = {
 	"gopls",
 	"tsserver",
 	"ocamllsp",
+	"svelte",
+	"marksman",
 }
 
 
 local lsp = require("lsp-zero")
 
 lsp.preset({
-	float_border = "single",
+	float_border = "rounded",
 	manage_nvim_cmp = {
 		set_sources = 'recommended',
 		set_basic_mappings = true,

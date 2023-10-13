@@ -85,6 +85,9 @@ input "type:touchpad" {
     # Start a terminal
     bindsym $mod+Return exec $term
 
+    # Fix internet
+    bindsym $mod+i exec inetfix.sh
+
     # Kill focused window
     bindsym $mod+w kill
 

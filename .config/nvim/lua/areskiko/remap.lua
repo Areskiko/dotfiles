@@ -7,10 +7,13 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setqflist)
 
 
 -- Navigate quickfix- and locationlists
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+--vim.keymap.set("n", "<leader>l", "<cmd>cnext<CR>zz")
+--vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "Æ", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "æ", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>la", [["lyiw:lvim /<C-R>l/gj %<CR>]])
+vim.keymap.set("n", "<leader>lc", "<cmd>lexpr []<CR>")
+vim.keymap.set("n", "<leader>lr", [[:lexpr []<CR>"lyiw:lvim /<C-R>l/gj %<CR>]])
 
 
 -- Move selected text

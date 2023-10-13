@@ -16,8 +16,9 @@ return require("packer").startup(function(use)
 
 	-- File picker
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-		requires = { { 'nvim-lua/plenary.nvim' } }
+		'nvim-telescope/telescope.nvim',
+		requires = { { 'nvim-lua/plenary.nvim' },
+		}
 	}
 
 	-- Universal CTags

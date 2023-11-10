@@ -1,14 +1,10 @@
 vim.g.mapleader = " "
 
--- Colors
-vim.o.background = "dark"
-vim.o.termguicolors = true
-vim.cmd([[colorscheme gruvbox]])
-
 -- Lines
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.linebreak = true
+-- vim.opt.colorcolumn = "80"
 
 -- Indentation
 vim.opt.tabstop = 4

@@ -7,6 +7,7 @@ local servers = {
 	"ocamllsp",
 	"svelte",
 	"marksman",
+	"ccls"
 }
 
 

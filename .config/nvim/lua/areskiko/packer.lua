@@ -8,6 +8,11 @@ return require("packer").startup(function(use)
 	-- Theme
 	use 'ellisonleao/gruvbox.nvim'
 
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
+
 	-- Syntax highlighting
 	use {
 		'nvim-treesitter/nvim-treesitter',

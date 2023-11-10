@@ -2,6 +2,7 @@ require 'nvim-treesitter.configs'.setup {
 	-- A list of parser names, or "all"
 	ensure_installed = {
 		"c",
+		"cmake",
 		"lua",
 		"rust",
 		"javascript",
@@ -12,7 +13,8 @@ require 'nvim-treesitter.configs'.setup {
 		"go",
 		"ocaml",
 		"latex",
-		"markdown"
+		"markdown",
+		"css"
 	},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)

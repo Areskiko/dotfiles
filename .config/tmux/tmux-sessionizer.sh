@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-	selected=$(cat ~/.config/tmux/tmux-sessionizer-directories  | xargs -I % find  % -mindepth 1 -maxdepth 1 -type d | fzf)
+	selected=$(cat ~/.config/tmux/tmux-sessionizer-directories  | xargs -I % find  % -mindepth 2 -maxdepth 2 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then

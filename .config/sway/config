@@ -4,7 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-
+xwayland disable
 
 ### Variables
 #
@@ -16,7 +16,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term wezterm
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -27,10 +27,10 @@ set $menu wofi --show drun
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * background ~/.config/sway/wallpapers/#4db5bd.png fill
-output * background ~/.config/sway/wallpapers/6ee2ff.png fill
+output * background ~/.config/sway/wallpapers/wallpaper_#ffcc33.png fill
 default_border pixel 1
 client.unfocused "#000000" "#000000" "#000000" "#000000" "#000000"
-client.focused "#000000" "#000000" "#000000" "#ff6700" "#ff6700"
+client.focused "#000000" "#000000" "#000000" "#ffcc33" "#ffcc33"
 client.focused_inactive "#000000" "#000000" "#000000" "#000000" "#000000"
 
 #
@@ -45,9 +45,9 @@ client.focused_inactive "#000000" "#000000" "#000000" "#000000" "#000000"
 # Example configuration:
 #
  exec swayidle -w \
-          timeout 300 'swaylock -f -i ~/.config/sway/locked.png' \
+          timeout 300 'swaylock -f -i ~/.config/sway/locked/locked_#ffcc33.png' \
           timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          before-sleep 'swaylock -f -c 000000'
+          before-sleep 'swaylock -f -i ~/.config/sway/locked/locked_#ffcc33.png'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -70,6 +70,7 @@ client.focused_inactive "#000000" "#000000" "#000000" "#000000" "#000000"
 ### Input configuration:
 input "type:keyboard" {
 	xkb_layout no
+	xkb_options caps:escape_shifted_capslock
 }
 
 input "type:touchpad" {
@@ -105,7 +106,7 @@ input "type:touchpad" {
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
-	bindsym $mod+p exec swaylock -f -i ~/.config/sway/locked.png
+	bindsym $mod+p exec swaylock -f -i ~/.config/sway/locked/locked_#ffcc33.png
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'

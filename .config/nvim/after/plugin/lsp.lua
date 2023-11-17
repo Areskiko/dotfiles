@@ -3,11 +3,13 @@ local icons = require("areskiko.icons")
 local servers = {
 	"rust_analyzer",
 	"gopls",
-	"tsserver",
+	"zls",
+	"ccls",
 	"ocamllsp",
+	"tsserver",
 	"svelte",
 	"marksman",
-	"ccls"
+	"pyright",
 }
 
 

@@ -24,7 +24,7 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 -- Navigation
-vim.g.netrw_keepdir = 0
+--vim.g.netrw_keepdir = 0
 
 -- Responsive
 vim.opt.updatetime = 50

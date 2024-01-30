@@ -58,4 +58,23 @@ return require("packer").startup(function(use)
 			{ 'rafamadriz/friendly-snippets' },
 		}
 	}
+
+	-- Zk
+	use {
+		'zk-org/zk-nvim'
+	}
+
+	-- Copilot ew
+	use {
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				suggestion = {
+					auto_trigger = true,
+				},
+			})
+		end,
+	}
 end)

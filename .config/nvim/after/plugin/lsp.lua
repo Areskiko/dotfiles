@@ -1,15 +1,18 @@
 local icons = require("areskiko.icons")
+require("luasnip.loaders.from_snipmate").lazy_load()
 
 local servers = {
 	"rust_analyzer",
 	"gopls",
 	"zls",
-	"ccls",
+	--"ccls",
+	"clangd",
 	"ocamllsp",
 	"tsserver",
 	"svelte",
-	"marksman",
+	--"marksman",
 	"pyright",
+	"hls"
 }
 
 
@@ -39,8 +42,8 @@ local cmp_select = { behaviour = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
 	['<C-b>'] = cmp.mapping.scroll_docs(-4),
 	['<C-f>'] = cmp.mapping.scroll_docs(4),
-	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+	['<A-k>'] = cmp.mapping.select_prev_item(cmp_select),
+	['<A-j>'] = cmp.mapping.select_next_item(cmp_select),
 	['<C-e>'] = cmp.mapping.abort(),
 	['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	['<C-Space>'] = cmp.mapping.complete(),
@@ -48,6 +51,11 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
+	sources = {
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' },
+		{ name = 'buffer' }
+	},
 	formatting = {
 		format = function(entry, vim_item)
 			-- Kind icons

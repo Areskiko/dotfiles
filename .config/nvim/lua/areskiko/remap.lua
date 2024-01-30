@@ -1,5 +1,3 @@
-local functions = require('areskiko.functions')
-
 -- Diagnostics
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', 'Ø', vim.diagnostic.goto_prev)
@@ -43,6 +41,3 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 vim.keymap.set("n", "<leader>P", [["+P]])
-
--- Notes
-vim.keymap.set("n", "<leader>n", functions.newShardFile)

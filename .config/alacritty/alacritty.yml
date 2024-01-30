@@ -3,7 +3,8 @@ env:
 
 font:
   normal:
-    family: "MesloLGS NF"
+    family: "Monaspace Neon VAR"
+    #family: "JetBrainsMono Nerd Font"
 
 colors:
   primary:

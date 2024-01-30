@@ -5,6 +5,7 @@
 # Read `man 5 sway` for a complete reference.
 
 xwayland disable
+smart_borders on
 
 ### Variables
 #
@@ -27,10 +28,10 @@ set $menu wofi --show drun
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * background ~/.config/sway/wallpapers/#4db5bd.png fill
-output * background ~/.config/sway/wallpapers/wallpaper_#ffcc33.png fill
-default_border pixel 1
+output * background ~/images/fire.png fill
+default_border none
 client.unfocused "#000000" "#000000" "#000000" "#000000" "#000000"
-client.focused "#000000" "#000000" "#000000" "#ffcc33" "#ffcc33"
+client.focused "#000000" "#000000" "#000000" "#ff6700" "#ff6700"
 client.focused_inactive "#000000" "#000000" "#000000" "#000000" "#000000"
 
 #
@@ -45,9 +46,9 @@ client.focused_inactive "#000000" "#000000" "#000000" "#000000" "#000000"
 # Example configuration:
 #
  exec swayidle -w \
-          timeout 300 'swaylock -f -i ~/.config/sway/locked/locked_#ffcc33.png' \
+          timeout 300 'swaylock -fe -i ~/images/8bit.png' \
           timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          before-sleep 'swaylock -f -i ~/.config/sway/locked/locked_#ffcc33.png'
+          before-sleep 'swaylock -fe -i ~/images/8bit.png'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -106,7 +107,7 @@ input "type:touchpad" {
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
-	bindsym $mod+p exec swaylock -f -i ~/.config/sway/locked/locked_#ffcc33.png
+	bindsym $mod+p exec swaylock -fe -i ~/images/8bit_resized.png -c 000000
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'

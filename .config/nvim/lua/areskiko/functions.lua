@@ -1,11 +1,15 @@
 function NewShardFile()
 	local name = vim.fn.input("File name: ")
-	local dir = vim.fn.expand('%:p:h')
-	local taken = io.popen('find ' .. dir .. ' -mindepth 1 -maxdepth 1'):lines()
+	if (name == "") then
+		return
+	end
 
-	local s, e, is, ie
+	local dir = vim.fn.expand('%:p:h')
+	local taken = io.popen('find ' .. dir .. ' -mindepth 1 -maxdepth 1 -type f'):lines()
+
+	local s, e, is, ie, sp
 	local next
-	local name_regex = "%d+%-%a+%.md$"
+	local name_regex = "%d+%-[^%d]-%.md$"
 	local id_regex = "%d+"
 	local existing
 	local existing_id
@@ -17,6 +21,8 @@ function NewShardFile()
 		if (s == nil or e == nil) then
 			goto continue
 		end
+
+		sp = s
 
 		existing_name = string.sub(t, s, e)
 		is, ie = string.find(existing_name, id_regex)
@@ -37,10 +43,10 @@ function NewShardFile()
 	    ::continue::
 	end
 
-	local pre = string.sub(existing, 0, s-1)
+	local pre = string.sub(existing, 0, sp-1)
 	local next_id = next + 1
 	local path =  pre .. next_id .. "-" .. name .. ".md"
-	print(path)
+	vim.print(path)
 	io.output(path)
 	io.write("# " .. name)
 	io.flush()

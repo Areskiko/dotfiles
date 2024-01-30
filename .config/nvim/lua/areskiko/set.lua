@@ -28,3 +28,24 @@ vim.opt.undofile = true
 
 -- Responsive
 vim.opt.updatetime = 50
+
+-- Insert message
+vim.opt.showmode = false
+
+-- Spell
+vim.opt.spell = true
+
+-- Text Width
+local formattingGroup = vim.api.nvim_create_augroup('formatting', { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	group=formattingGroup,
+	pattern="*",
+	callback = function()
+        if vim.bo.filetype ~= "markdown" then
+			vim.opt.textwidth = 0
+		else
+			vim.opt.textwidth = 80
+		end
+    end,
+})
+

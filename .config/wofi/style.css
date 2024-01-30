@@ -2,7 +2,7 @@ window {
     margin: 0px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 0px;
-    border: 1px solid #4db5bd;
+    border: 1px solid #ff6700;
 }
 
 #input {
@@ -14,7 +14,7 @@ window {
 }
 
 #input:focus * {
-    border: none; 
+    border: none;
 }
 
 #inner-box {
@@ -36,13 +36,13 @@ window {
 #text {
     margin: 5px;
     border: none;
-    color: #4db5bd;
+    color: #ff6700;
 	background-color: rgba(0, 0, 0, 0);
-} 
+}
 
 #entry:selected {
     border-radius: 0px;
-    border: 1px solid #4db5bd;
+    border: 1px solid #ff6700;
 	background-color: rgba(0, 0, 0, 0.5);
     outline: none;
 }

@@ -14,7 +14,8 @@ require 'nvim-treesitter.configs'.setup {
 		"ocaml",
 		"latex",
 		"markdown",
-		"css"
+		"css",
+		"haskell"
 	},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)

@@ -65,7 +65,8 @@ return require("packer").startup(function(use)
 	}
 
 	-- Copilot ew
-	use {
+	--[[
+	disabled use {
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
 		event = "InsertEnter",
@@ -77,4 +78,16 @@ return require("packer").startup(function(use)
 			})
 		end,
 	}
+	]]
+
+	use { 'folke/noice.nvim',
+		requires = {
+			{ "MunifTanjim/nui.nvim" },
+			{ 'rcarriga/nvim-notify' }
+		}
+	}
+
+	use { 'nvim-telescope/telescope-ui-select.nvim' }
+
+	use { 'stevearc/oil.nvim' }
 end)

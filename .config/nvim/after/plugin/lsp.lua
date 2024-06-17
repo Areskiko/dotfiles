@@ -12,7 +12,8 @@ local servers = {
 	"svelte",
 	--"marksman",
 	"pyright",
-	"hls"
+	"texlab",
+	"tailwindcss"
 }
 
 

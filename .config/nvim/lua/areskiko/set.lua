@@ -20,7 +20,7 @@ vim.opt.incsearch = true
 -- Swap and Undo
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.local/share/undodir"
 vim.opt.undofile = true
 
 -- Navigation
@@ -48,4 +48,3 @@ vim.api.nvim_create_autocmd("FileType", {
 		end
     end,
 })
-

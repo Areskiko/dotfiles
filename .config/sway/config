@@ -4,7 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-xwayland disable
+#xwayland disable
 smart_borders on
 
 ### Variables
@@ -46,9 +46,9 @@ client.focused_inactive "#000000" "#000000" "#000000" "#000000" "#000000"
 # Example configuration:
 #
  exec swayidle -w \
-          timeout 300 'swaylock -fe -i ~/images/8bit.png' \
+          timeout 300 'swaylock -fe -i ~/images/8bit_resized.png' \
           timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          before-sleep 'swaylock -fe -i ~/images/8bit.png'
+          before-sleep 'swaylock -fe -i ~/images/8bit_resized.png'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -97,6 +97,9 @@ input "type:touchpad" {
     #bindsym $mod+d exec $menu
 
     bindsym alt+space exec $menu
+
+	bindsym $mod+s exec systemctl suspend-then-hibernate
+	bindsym $mod+Shift+s exec systemctl hibernate
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -187,6 +190,8 @@ input "type:touchpad" {
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+	bindsym $mod+n exec bluetoothctl connect 60:AB:D2:19:0F:89
 #
 # Scratchpad:
 #

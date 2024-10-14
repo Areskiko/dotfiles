@@ -13,7 +13,8 @@ local servers = {
 	--"marksman",
 	"pyright",
 	"texlab",
-	"tailwindcss"
+	--"tailwindcss",
+	"hls"
 }
 
 
@@ -35,7 +36,7 @@ lsp.preset({
 -- lsp.ensure_installed(default_language_servers)
 
 -- Fix Undefined global 'vim'
-lsp.nvim_workspace()
+--lsp.nvim_workspace()
 
 -- Autocomplete
 local cmp = require("cmp")
@@ -50,7 +51,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 	['<C-Space>'] = cmp.mapping.complete(),
 })
 
-lsp.setup_nvim_cmp({
+cmp.setup({
 	mapping = cmp_mappings,
 	sources = {
 		{ name = 'nvim_lsp' },
@@ -104,5 +105,9 @@ vim.diagnostic.config({
 for _, server in pairs(servers) do
 	require('lspconfig')[server].setup({})
 end
+
+require("lspconfig").biome.setup({
+	cmd = {"npx", "biome", "lsp-proxy"}
+})
 
 lsp.setup()

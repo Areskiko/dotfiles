@@ -27,6 +27,9 @@ config.window_padding = {
 config.force_reverse_video_cursor = true
 config.window_background_opacity = 0.8
 
+config.send_composed_key_when_left_alt_is_pressed = true
+config.send_composed_key_when_right_alt_is_pressed = false
+config.audible_bell = "Disabled"
 
 --config.background = {
 --	{ source = { Color = "black" }, opacity = 0.9 }

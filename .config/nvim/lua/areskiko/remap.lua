@@ -42,3 +42,9 @@ vim.keymap.set("n", "<leader>P", [["+P]])
 
 -- Buffers
 vim.keymap.set("n", "<leader>tn", "<cmd>tabnext<CR>")
+
+-- Oil
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- Spell check
+vim.keymap.set("n", "<leader>m", "[s1z=`]", { desc = "Correct last mistake" })

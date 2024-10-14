@@ -1,0 +1,17 @@
+[user]
+	email = developer@mack.aleeas.com
+	name = Stefan Mack
+[rerere]
+	enable = true
+[advice]
+	skippedCherryPicks = false
+[core]
+	editor = nvim
+[includeIf "gitdir:~/projects/personal"]
+    path = ~/projects/personal/.gitconfig
+[includeIf "gitdir:~/projects/ksso"]
+    path = ~/projects/ksso/.gitconfig
+[includeIf "gitdir:~/projects/kantega"]
+    path = ~/projects/kantega/.gitconfig
+[push]
+	autoSetupRemote = true

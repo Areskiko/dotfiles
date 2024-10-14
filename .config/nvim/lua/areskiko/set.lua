@@ -41,10 +41,10 @@ vim.api.nvim_create_autocmd("FileType", {
 	group=formattingGroup,
 	pattern="*",
 	callback = function()
-        if vim.bo.filetype ~= "markdown" then
-			vim.opt.textwidth = 0
-		else
+        if vim.bo.filetype == "markdown" or vim.bo.filetype == "gitcommit" then
 			vim.opt.textwidth = 80
+		else
+			vim.opt.textwidth = 0
 		end
     end,
 })

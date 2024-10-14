@@ -88,6 +88,12 @@ return require("packer").startup(function(use)
 	}
 
 	use { 'nvim-telescope/telescope-ui-select.nvim' }
+	use({
+		"stevearc/oil.nvim",
+		config = function()
+		  require("oil").setup()
+		end,
+	})
 
-	use { 'stevearc/oil.nvim' }
+	use {'lewis6991/gitsigns.nvim'}
 end)
